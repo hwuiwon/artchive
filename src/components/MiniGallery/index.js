@@ -3,46 +3,48 @@ import { useNavigate } from "react-router-dom";
 import { ProGallery } from "pro-gallery";
 import "pro-gallery/dist/statics/main.css";
 
-export default function Gallery() {
+export default function MiniGallery() {
   const navigate = useNavigate();
 
   const items = [
     {
       itemId: "1",
       mediaUrl:
-        "https://images.squarespace-cdn.com/content/v1/573031141d07c088bf6e7fb6/1508328221223-DQFOMZJ81M56CH81JHGR/Prisoned_mind_lo_res.jpg?format=2500w",
+        "https://d7hftxdivxxvm.cloudfront.net/?resize_to=fit&width=800&height=638&quality=80&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2FcvOf60j5dfdkrsS3e3_BIw%2Fnormalized.jpg",
       metaData: {
         type: "image",
-        title: "Prisoned Mind",
+        title: "Melody of unknown moments",
         description:
-          "Acrylic Painting by Waone Interes Nikazki (@waone_interesnikazki)",
+          "Acrylic on canvas, 120 x 150 cm. 2021. My second painting for the Untitled Art Fair Miami Beach. For all inquiries contact @saparcontemporary",
         link: {
-          url: "https://www.instagram.com/p/CbfUvWOOb5y/",
+          url: "https://www.instagram.com/p/CW6G0wcs4J0/",
         },
       },
     },
     {
       itemId: "2",
-      mediaUrl:
-        "https://lh3.googleusercontent.com/i4xxcz6ZhxBizlYF7QKLgeOyoeIDchYNWn_k4oeAPjiESeOzXudfOk11mXgUb59tTuZeP4vN3E56y8P7jQ82hgj1vQM-eLhrQSCvLw=w1400-k",
+      mediaUrl: "https://f4.bcbits.com/img/a4044262114_5.jpg",
       metaData: {
         type: "image",
-        title: "The Fleur",
-        description: "3D Artworks: “The Fleur” Collection by Ondrej Zunka",
+        title: "Вертолётики",
+        description:
+          "Album art for @mumiytroll Illustration for “Вертолётики” song. Acrylic and gouache on 640 gsm paper, 50 x 50 cm.",
         link: {
-          url: "https://www.instagram.com/p/Cbad3o8rpuD/",
+          url: "https://www.instagram.com/p/CJWQAJZMtqm/",
         },
       },
     },
     {
       itemId: "3",
-      mediaUrl: "https://www.prntr.com/images/modern-art-3.jpg",
+      mediaUrl:
+        "https://images.squarespace-cdn.com/content/v1/573031141d07c088bf6e7fb6/1639395294594-DRB1CRX609NHEQXOFQBG/_AN59417_Lo_Res.jpg?format=500w",
       metaData: {
         type: "image",
-        title: "Primal",
-        description: "sample-description",
+        title: "послезла",
+        description:
+          "Album cover for @mumiytroll #послезла Acrylic and gouache painting on paper, 50x50 cm.",
         link: {
-          url: "http://example.com",
+          url: "https://www.instagram.com/p/CJWQAJZMtqm/",
         },
       },
     },
@@ -178,6 +180,7 @@ export default function Gallery() {
 
   const options = {
     galleryLayout: -1,
+    groupSize: 0,
     imageMargin: 10,
     scrollAnimation: "FADE_IN",
     overlayAnimation: "FADE_IN",
@@ -188,12 +191,12 @@ export default function Gallery() {
 
   const container = {
     width: window.innerWidth,
-    height: window.innerHeight - 114,
+    height: 250,
   };
 
   const eventsListener = (eventName, eventData) => {
     if (eventName === "ITEM_CLICKED") {
-      navigate("info", {
+      navigate("/info", {
         state: {
           data: {
             title: eventData.title,

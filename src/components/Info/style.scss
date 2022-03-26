@@ -3,35 +3,49 @@
   display: flex;
   margin-top: 3rem;
   margin-left: 3rem;
+  position: relative;
 
   img {
-    max-width: 50rem;
-    max-height: 45rem;
+    max-width: 40rem;
+    max-height: 40rem;
   }
 
   .information {
     margin-left: 3rem;
-  }
 
-  #art-title {
-    font-size: 3.5rem;
-    font-weight: bold;
-  }
+    #art-title {
+      font-size: 3.5rem;
+      font-weight: bold;
+    }
 
-  #art-description {
-    margin-top: 1rem;
-    font-size: 0.875rem;
-    font-weight: bold;
-    color: grey;
-  }
-
-  #source {
-    margin-top: 1rem;
-    a {
-      font-size: 0.55rem;
+    #art-description {
+      margin-top: 1rem;
+      font-size: 0.875rem;
       font-weight: bold;
       color: grey;
-      font-style: italic;
+      max-width: 40rem;
+    }
+
+    #source {
+      margin-top: 1rem;
+      a {
+        font-size: 0.55rem;
+        font-weight: bold;
+        color: grey;
+        font-style: italic;
+      }
+    }
+  }
+
+  .more {
+    position: absolute;
+    bottom: 0;
+    margin-left: 3rem;
+
+    #more-title {
+      margin-bottom: 30px;
+      font-size: 1.5rem;
+      font-weight: bold;
     }
   }
 }
