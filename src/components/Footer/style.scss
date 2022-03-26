@@ -1,0 +1,26 @@
+footer {
+  #footer-text {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+
+    font {
+      font-family: "Libre Baskerville";
+      font-weight: bold;
+      font-size: 0.7rem;
+      color: grey;
+      width: auto;
+    }
+  }
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  padding: 0;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-top: 30px;
+}

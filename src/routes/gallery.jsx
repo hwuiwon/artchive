@@ -1,6 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 import { ProGallery } from "pro-gallery";
 import "pro-gallery/dist/statics/main.css";
-import { useNavigate } from "react-router-dom";
 
 export default function Gallery() {
   const navigate = useNavigate();
@@ -206,7 +207,6 @@ export default function Gallery() {
           },
         },
       });
-      //   window.open(eventData.linkUrl, "_blank");
     }
   };
 
