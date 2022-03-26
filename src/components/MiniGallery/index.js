@@ -50,7 +50,7 @@ export default function MiniGallery() {
     },
     {
       itemId: "4",
-      mediaUrl: "https://www.prntr.com/images/modern-art-4.jpg",
+      mediaUrl: "https://pbs.twimg.com/media/EVkOLJVXYAAOLIF.jpg",
       metaData: {
         type: "image",
         title: "Primal",
@@ -62,7 +62,8 @@ export default function MiniGallery() {
     },
     {
       itemId: "5",
-      mediaUrl: "https://www.prntr.com/images/modern-art-5.jpg",
+      mediaUrl:
+        "https://galleriavarsi.it/wp-content/uploads/2018/11/Jump_through_timeLO_RES-650x521.jpg",
       metaData: {
         type: "image",
         poster: "sample-image-url",
@@ -76,7 +77,8 @@ export default function MiniGallery() {
     },
     {
       itemId: "6",
-      mediaUrl: "https://www.prntr.com/images/modern-art-6.jpg",
+      mediaUrl:
+        "https://i.pinimg.com/736x/b0/9e/57/b09e5739423a85092d7d2f45e7ed0d88.jpg",
       metaData: {
         type: "image",
         poster: "sample-image-url",
