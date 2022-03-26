@@ -179,4 +179,4 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [issues-url]: https://github.com/hwuiwon/artchive/issues
 [license-shield]: https://img.shields.io/badge/license-MIT-green?style=for-the-badge
 [license-url]: https://github.com/hwuiwon/artchive/blob/main/LICENSE.md
-[product-screenshot]: assets/artchive_1.png
+[product-screenshot]: assets/artchive_showcase.jpeg
