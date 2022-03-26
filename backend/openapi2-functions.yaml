@@ -1,0 +1,21 @@
+swagger: '2.0'
+info:
+  title: artchive-api-config
+  description: API config for artchive-api
+  version: 1.0.0
+schemes:
+  - https
+produces:
+  - application/json
+paths:
+  /api:
+    get:
+      summary: Greet a user
+      operationId: hello
+      x-google-backend:
+        address: https://us-central1-artchive.cloudfunctions.net/helloGET
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
