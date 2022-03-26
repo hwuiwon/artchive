@@ -14,7 +14,6 @@ export default function Gallery() {
         type: "image",
         title: "sample-title",
         description: "sample-description",
-        focalPoint: [0, 0],
         link: {
           url: "http://example.com",
         },
@@ -26,10 +25,8 @@ export default function Gallery() {
         "https://images.saatchiart.com/saatchi/1533373/art/7825361/6893260-HSC00001-6.jpg",
       metaData: {
         type: "image",
-        poster: "sample-image-url",
         title: "Primal",
         description: "sample-description",
-        focalPoint: [0, 0],
         link: {
           url: "http://example.com",
         },
@@ -41,10 +38,8 @@ export default function Gallery() {
         "https://beyondlanguage.files.wordpress.com/2013/07/stream_of_consciousness_4_contemporary_abstract_art.jpg",
       metaData: {
         type: "image",
-        poster: "sample-image-url",
         title: "Primal",
         description: "sample-description",
-        focalPoint: [0, 0],
         link: {
           url: "http://example.com",
         },
@@ -56,10 +51,8 @@ export default function Gallery() {
         "https://www.worldatlas.com/r/w1200/upload/ca/13/25/whistlers-mother-high-res.jpg",
       metaData: {
         type: "image",
-        poster: "sample-image-url",
         title: "Primal",
         description: "sample-description",
-        focalPoint: [0, 0],
         link: {
           url: "http://example.com",
         },
@@ -198,14 +191,21 @@ export default function Gallery() {
 
   const container = {
     width: window.innerWidth,
-    height: window.innerHeight - 81,
+    height: window.innerHeight - 114,
   };
 
   const eventsListener = (eventName, eventData) => {
-    // If user clicks artwork, redirect to its original url
     if (eventName === "ITEM_CLICKED") {
-      console.log(eventData);
-      navigate("info", { state: { data: eventData } });
+      navigate("info", {
+        state: {
+          data: {
+            title: eventData.title,
+            description: eventData.description,
+            url: eventData.linkUrl,
+            imageUrl: eventData.url,
+          },
+        },
+      });
       //   window.open(eventData.linkUrl, "_blank");
     }
   };

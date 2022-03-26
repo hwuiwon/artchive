@@ -1,14 +1,17 @@
 import React from "react";
-import "./style.scss";
+import { Link } from "react-router-dom";
 
-import logo from "../../assets/logo.png";
+import "./style.scss";
 
 export default function Header() {
   return (
     <nav>
       <div id="nav-left">
-        <img src={logo} alt="logo" />
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <font>artchive</font>
+        </Link>
       </div>
+      <hr />
     </nav>
   );
 }

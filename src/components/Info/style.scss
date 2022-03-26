@@ -1,0 +1,37 @@
+.container {
+  font-family: "Libre Baskerville";
+  display: flex;
+  margin-top: 3rem;
+  margin-left: 3rem;
+
+  img {
+    max-width: 50rem;
+    max-height: 45rem;
+  }
+
+  .information {
+    margin-left: 3rem;
+  }
+
+  #art-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+  }
+
+  #art-description {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: grey;
+  }
+
+  #source {
+    margin-top: 1rem;
+    a {
+      font-size: 0.55rem;
+      font-weight: bold;
+      color: grey;
+      font-style: italic;
+    }
+  }
+}
