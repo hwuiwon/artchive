@@ -48,7 +48,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#features">Features</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -64,7 +64,7 @@
 
 **Bring attention to lesser known artistic communities**
 
-We aim to bring attention to lesser known artistic communities through giving equal opportunities to showcase everyone's artwork.
+Many new and existing artists are deliberately working to express their art universe and publicize their work. However, it’s always challenging to catch people’s attention, and only a few succeed. To address and solve this problem, we aim to bring attention to lesser-known artists and artistic communities through giving equal opportunities to showcase everyone's artwork and even funding them directly through our platform Artchive.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -72,10 +72,14 @@ We aim to bring attention to lesser known artistic communities through giving eq
 
 - Frontend
   - [React](https://reactjs.org/)
+  - [Sass](https://sass-lang.com/)
+
 - Backend
   - [Google Cloud Platform](https://cloud.google.com/)
-- CI/CD
-  - [CircleCI](https://circleci.com/integrations/gcp/)
+  - [Google Cloud API Gateway](https://cloud.google.com/api-gateway)
+  - [Google Cloud Functions](https://cloud.google.com/functions)
+- Hosting
+  - [Google Cloud App Engine](https://cloud.google.com/appengine)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -92,9 +96,11 @@ We aim to bring attention to lesser known artistic communities through giving eq
 
 ### Installation
 
+#### Frontend
+
 1. Clone the repo
    ```sh
-   git clone https://github.com/Eppey/eppey.git
+   git clone https://github.com/hwuiwon/artchive
    ```
 2. Install NPM packages
    ```sh
@@ -105,13 +111,51 @@ We aim to bring attention to lesser known artistic communities through giving eq
    npm start
    ```
 
+#### Backend
+
+1. Clone the repo && Go into backend directory
+   ```sh
+   git clone https://github.com/hwuiwon/artchive
+   cd backend
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Start your own local server serving cloud functions
+   ```sh
+   npm start
+   ```
+   Make http request to [http://localhost:8080/](http://localhost:8080/)
+
+4. When the api is ready to be deployed, run
+   ```sh
+   npm run deploy:api
+   ```
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- USAGE EXAMPLES -->
 
-## Usage
+<!-- FEATURES -->
 
-Working on it
+## Features
+Artchive has 2 pages.
+
+The main page is a gallery of the latest artworks by artists with diverse
+backgrounds and histories. Every artwork shown is randomly ordered so that
+every artist can have an equal opportunity to be showcased. The artworks are
+scraped from other websites that has trending artworks. We intentionally left
+out all of the information except the artwork itself, which might help identify
+the artist to prevent people from having any assumptions before looking at the
+information of the art by clicking it.
+
+The information page shows the artwork and its descriptions. People can see
+which artist created this artwork and see other artwork created by the same
+artist that may interest them. This way, artists have a chance to feature their
+other artworks and concepts that they have been working on. On the other hand,
+the audience can find out the genres that they are potentially interested in
+and find any other existing artworks that may interest them, like Spotify’s
+song recommendation algorithm.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -120,13 +164,15 @@ Working on it
 ## Roadmap
 
 - [x] Design App structure & workflow
-- [x] Frontend (React Native)
+- [x] Frontend (React & Sass)
   - [x] Main
     - [x] Home Screen
     - [x] Information
     - [x] Related Artworks
-- [ ] Backend (GCP)
-  - [ ] API
+- [x] Backend (GCP)
+  - [x] API Gateway
+  - [x] Cloud Functions
+- [x] Hosting (Google Cloud App Engine)
 
 See the [open issues](https://github.com/hwuiwon/artchive/issues) for a full list of proposed features (and known issues).
 

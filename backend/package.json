@@ -29,10 +29,7 @@
     "@google-cloud/debug-agent": "^5.0.0",
     "@google-cloud/functions-framework": "^2.0.0",
     "cheerio": "^1.0.0-rc.10",
-    "escape-html": "^1.0.3",
-    "request": "^2.88.2",
-    "request-promise": "^4.2.6",
-    "sharp": "^0.30.3"
+    "request-promise": "^4.2.6"
   },
   "devDependencies": {
     "@google-cloud/pubsub": "^2.0.0",
