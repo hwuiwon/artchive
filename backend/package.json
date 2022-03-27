@@ -4,6 +4,8 @@
   "description": "Collection of google cloud functions to support artchive backend service",
   "main": "index.js",
   "scripts": {
+    "start": "functions-framework --target=api --signature-type=http",
+    "deploy:api": "gcloud functions deploy api --runtime nodejs16 --trigger-http --allow-unauthenticated",
     "unit-test": "mocha test/index.test.js test/*unit*test.js test/*integration*test.js --timeout=6000 --exit",
     "system-test": "mocha test/*system*test.js --timeout=600000 --exit",
     "all-test": "npm run unit-test && npm run system-test",
@@ -26,7 +28,11 @@
   "dependencies": {
     "@google-cloud/debug-agent": "^5.0.0",
     "@google-cloud/functions-framework": "^2.0.0",
-    "escape-html": "^1.0.3"
+    "cheerio": "^1.0.0-rc.10",
+    "escape-html": "^1.0.3",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "sharp": "^0.30.3"
   },
   "devDependencies": {
     "@google-cloud/pubsub": "^2.0.0",

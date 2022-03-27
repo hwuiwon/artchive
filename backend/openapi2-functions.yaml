@@ -10,10 +10,10 @@ produces:
 paths:
   /api:
     get:
-      summary: Greet a user
-      operationId: hello
+      summary: artchive api functions
+      operationId: api
       x-google-backend:
-        address: https://us-central1-artchive.cloudfunctions.net/helloGET
+        address: https://us-central1-artchive.cloudfunctions.net/api
       responses:
         '200':
           description: A successful response

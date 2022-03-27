@@ -1,85 +1,68 @@
 'use strict';
-
 const functions = require('@google-cloud/functions-framework');
-const escapeHtml = require('escape-html');
+const request = require('request-promise');
+const cheerio = require('cheerio');
 
-functions.http('helloGET', (req, res) => {
-  res.send('Hello World!');
+functions.http('api', async (req, res) => {
+  res.set('Access-Control-Allow-Origin', '*');
+
+  if (req.method === 'OPTIONS') {
+    // Send response to OPTIONS requests
+    res.set('Access-Control-Allow-Methods', 'GET');
+    res.set('Access-Control-Allow-Headers', 'Content-Type');
+    res.set('Access-Control-Max-Age', '3600');
+    res.status(204).send('');
+  } else {
+    const img_src = 'https://www.booooooom.com/blog/art/';
+
+    request(img_src, (error, response, html) => {
+      if (!error && response.statusCode == 200) {
+        const data = scrape(html);
+        res.json({ links: data });
+      } else {
+        res.send('error');
+      }
+    });
+  }
 });
 
-functions.http('helloHttp', (req, res) => {
-  res.send(`Hello ${escapeHtml(req.query.name || req.body.name || 'World')}!`);
-});
+function scrape(html) {
+  const $ = cheerio.load(html);
+  const arts = $('.grid-item__link');
+  let data = [];
+  arts.each((index, art) => {
+    const thumbnail = $(art).find('img').attr('data-cfsrc');
 
-/*
- * Background Cloud Function to be triggered by Pub/Sub.
- * This function is exported by index.js, and executed when
- * the trigger topic receives a message.
- *
- * @param {object} message The Pub/Sub message.
- * @param {object} context The event metadata.
- */
-exports.helloPubSub = (message, context) => {
-  const name = message.data
-    ? Buffer.from(message.data, 'base64').toString()
-    : 'World';
+    const item = {
+      itemId: String(index),
+      mediaUrl: thumbnail,
+      metaData: {
+        type: 'image',
+        title: $(art).find('.sub-item__title.h3').text(),
+        description: $(art).find('.single-post-header__date').text(),
+        link: {
+          url: $(art).attr('href'),
+        },
+      },
+    };
 
-  console.log(`Hello, ${name}!`);
-};
+    data.push(item);
+  });
 
-/*
- * Generic background Cloud Function to be triggered by Cloud Storage.
- *
- * @param {object} file The Cloud Storage file metadata.
- * @param {object} context The event metadata.
- */
-exports.helloGCS = (file, context) => {
-  console.log(`  Event: ${context.eventId}`);
-  console.log(`  Event Type: ${context.eventType}`);
-  console.log(`  Bucket: ${file.bucket}`);
-  console.log(`  File: ${file.name}`);
-  console.log(`  Metageneration: ${file.metageneration}`);
-  console.log(`  Created: ${file.timeCreated}`);
-  console.log(`  Updated: ${file.updated}`);
-};
+  // shuffle the order
+  for (let i = data.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = data[i];
+    data[i] = data[j];
+    data[j] = temp;
+  }
 
-/*
- * Background Cloud Function that throws an error.
- *
- * @param {object} event The Cloud Functions event.
- * @param {object} context The event metadata.
- * @param {function} callback The callback function.
- */
-
-exports.helloError = (event, context, callback) => {
-  throw new Error('I failed you'); // Will cause a cold start if not caught
-};
-
-/*
- * Background Cloud Function that throws a value.
- *
- * @param {object} event The Cloud Functions event.
- * @param {object} context The event metadata.
- * @param {function} callback The callback function.
- */
-exports.helloError2 = (event, context, callback) => {
-  console.error(new Error('I failed you')); // Logging an Error object
-  console.error('I failed you'); // Logging something other than an Error object
-  throw 1; // Throwing something other than an Error object
-};
-
-/*
- * Background Cloud Function that returns an error.
- *
- * @param {object} event The Cloud Functions event.
- * @param {object} context The event metadata.
- * @param {function} callback The callback function.
- */
-exports.helloError3 = (event, context, callback) => {
-  callback('I failed you');
-};
-
-// HTTP Cloud Function that returns an error.
-functions.http('helloError4', (req, res) => {
-  res.status(500).send('I failed you');
-});
+  return data;
+  /*
+   * const images = $('.grid-item-thumbnail > img');
+   * images.each((i, img) => {
+   *   const link = $(img).attr('data-cfsrc');
+   *   links.push(link);
+   * });
+   */
+}
