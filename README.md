@@ -20,6 +20,9 @@
   <p align="center">
     Democratize Art Showcase for Everyone
     <br />
+    (Art + Archive)
+    <br />
+    <br />
     <a href="https://github.com/hwuiwon/artchive"><strong>Explore the docs »</strong></a>
     <br />
     <br />
