@@ -23,7 +23,7 @@
     <a href="https://github.com/hwuiwon/artchive"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/hwuiwon/artchive">View Demo</a>
+    <a href="https://www.artchive.tech">View Demo</a>
     ·
     <a href="https://github.com/hwuiwon/artchive/issues">Report Bug</a>
     ·
@@ -64,7 +64,12 @@
 
 **Bring attention to lesser known artistic communities**
 
-Many new and existing artists are deliberately working to express their art universe and publicize their work. However, it’s always challenging to catch people’s attention, and only a few succeed. To address and solve this problem, we aim to bring attention to lesser-known artists and artistic communities through giving equal opportunities to showcase everyone's artwork and even funding them directly through our platform Artchive.
+Many new and existing artists are deliberately working to express their art
+universe and publicize their work. However, it’s always challenging to catch
+people’s attention, and only a few succeed. To address and solve this problem,
+we aim to bring attention to lesser-known artists and artistic communities
+through giving equal opportunities to showcase everyone's artwork and even
+funding them directly through our platform Artchive.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
