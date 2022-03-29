@@ -9,7 +9,11 @@
 [![MIT License][license-shield]][license-url]
 
 <!-- PROJECT LOGO -->
-<br />
+---
+
+<p align="center"><b> 🏆 HooHacks 2022 Best Art and Gaming Hack 💰🔑 </b></p>
+
+---
 <div align="center">
   <a href="https://github.com/hwuiwon/artchive">
     <img src="assets/logo_a.png" alt="Logo" width="90" height="90">
