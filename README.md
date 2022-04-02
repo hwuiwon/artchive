@@ -11,7 +11,7 @@
 <!-- PROJECT LOGO -->
 ---
 
-<p align="center"><b> 🏆 HooHacks 2022 Best Art and Gaming Hack 💰🔑 </b></p>
+<p align="center"><b> 🏆 HooHacks 2022 Best Art and Gaming Hack 💰🔑 </b><br/></p>
 
 ---
 <div align="center">
@@ -35,6 +35,8 @@
     <a href="https://github.com/hwuiwon/artchive/issues">Report Bug</a>
     ·
     <a href="https://github.com/hwuiwon/artchive/issues">Request Feature</a>
+    ·
+    <a href="https://devpost.com/software/artchive-2tln9u" target="_blank">Link to Devpost</a>
   </p>
 </div>
 
